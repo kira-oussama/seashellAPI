@@ -22,7 +22,7 @@ class AdminLoginController extends Controller
         }
 
         if(!Auth::attempt(['email'=> $request->email , 'password' => $request->password])){
-            return response(['error' => 'your credentials are not correct' ]);
+            return response(['error' => 'vos informations d\'identification ne sont pas correctes' ]);
         }
 
         $token = Auth::user()->createToken('auth_token')->accessToken;

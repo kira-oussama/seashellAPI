@@ -25,7 +25,7 @@ class AbonneLoginController extends Controller
         }
 
         if(!Auth::guard('abonne')->attempt(['email'=> $request->email , 'password' => $request->password])){
-            return response(['errors' => 'your credentials are not correct' ]);
+            return response(['errors' => 'vos informations d\'identification ne sont pas correctes' ]);
         }
 
         $user = Abonne::where('email','=',$request->email)->first();
